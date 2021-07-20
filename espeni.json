@@ -114,10 +114,10 @@
             {
               "titles": "POWER_ELEXM_BIOMASS_POSTCALC_MW"
             },
-	    {
+	        {
               "titles": "POWER_NGEM_EMBEDDED_SOLAR_GENERATION_MW"
-	    },
-	    {
+	        },
+	        {
               "titles": "POWER_NGEM_EMBEDDED_WIND_GENERATION_MW"
             },
             {
