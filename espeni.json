@@ -1,0 +1,143 @@
+[
+  {
+    "content": {
+      "@type": "dcat:Dataset",
+      "@context": {
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dct": "http://purl.org/dc/terms/",
+        "oe": "http://energydata.org.uk/oe/terms/"
+      },
+      "dct:title": "Electrical half hourly raw and cleaned datasets for Great Britain from 2009-11-05",
+      "dct:description": "Cleaned and raw data sets for Great Britain's public electrical system. From publicly available data.",
+      "dcat:version": "0.1.2",
+      "dcat:versionNotes": "Version 5.0.2 of the dataset from 2021-07-20 found on https://doi.org/10.5281/zenodo.3884858",
+      "oe:sensitivityClass": "OE-O",
+      "oe:dataSetStableIdentifier": "GB-ESPENI-UoB"
+    },
+    "access": [
+      {
+        "rule": "oe:verified and oe:last_update within 60 days grants oe:use",
+        "sufficient": true,
+        "appliesFrom": "2021-04-22T00:00:00.000Z",
+        "appliesTo": "2022-04-22T00:00:00.000Z"
+      },
+      {
+        "rule": "oe:groups:some_group grants oe:use, oe:redistribute, oe:aggregate",
+        "sufficient": false,
+        "appliesFrom": "2021-04-22T00:00:00.000Z",
+        "appliesTo": "2022-04-22T00:00:00.000Z"
+      }
+    ],
+    "transport": {
+      "http": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Sample API",
+          "description": "CSV format data",
+          "version": "5.0.2"
+        },
+        "servers": [
+          {
+            "url": "https://zenodo.org/record/5055896", 
+            "description": "Electrical half hourly raw and cleaned datasets for Great Britain from 2009-11-05"
+          }
+        ],
+        "paths": {
+          "/files/espeni.csv?download=1": {
+            "get": {
+              "summary": "Returns a CSV containing all the data",
+              "description": "https://doi.org/10.5281/zenodo.3884858 points to the most recent version, where the most recent espeni.csv download link can be found"
+            },
+            "responses": {
+              "200": {
+                "description": "CSV data stream"
+              }
+            }
+          }
+        }
+      }
+    },
+    "representation": {
+      "mime": "text/csv",
+      "csvw": {
+        "@context": "http://www.w3.org/ns/csvw",
+        "tableSchema": {
+          "columns": [
+            {
+              "titles": "ELEXM_SETTLEMENT_DATE"
+            },
+            {
+              "titles": "ELEXM_SETTLEMENT_PERIOD"
+            },
+            {
+              "titles": "ELEXM_UTC"
+            },
+            {
+              "titles": "ELEXM_localtime"
+            },
+            {
+              "titles": "ELEXM_ROWFLAG"
+            },
+            {
+              "titles": "NGEM_ROWFLAG"
+            },
+            {
+              "titles": "POWER_ESPENI_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_CCGT_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_OIL_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_COAL_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_NUCLEAR_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_WIND_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_PS_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_NPSHYD_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_OCGT_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_OTHER_POSTCALC_MW"
+            },
+            {
+              "titles": "POWER_ELEXM_BIOMASS_POSTCALC_MW"
+            },
+	    {
+              "titles": "POWER_NGEM_EMBEDDED_SOLAR_GENERATION_MW"
+	    },
+	    {
+              "titles": "POWER_NGEM_EMBEDDED_WIND_GENERATION_MW"
+            },
+            {
+              "titles": "POWER_NGEM_BRITNED_FLOW_MW"
+            },
+            {
+              "titles": "POWER_NGEM_EAST_WEST_FLOW_MW"
+            },
+            {
+              "titles": "POWER_NGEM_FRENCH_FLOW_MW"
+            },
+            {
+              "titles": "POWER_NGEM_MOYLE_FLOW_MW"
+            },
+            {
+              "titles": "POWER_NGEM_NEMO_FLOW_MW"
+            }
+          ]
+        }
+      }
+    }
+  }
+]
