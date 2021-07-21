@@ -1,0 +1,56 @@
+- content:
+    "@type": "dcat:Dataset"
+    "@context":
+      dcat: http://www.w3.org/ns/dcat#
+      dct: http://purl.org/dc/terms/
+      oe: http://energydata.org.uk/oe/terms/
+    dct:title: Electrical half hourly raw and cleaned datasets for Great Britain from 2009-11-05
+    dct:description: Cleaned and raw data sets for Great Britain's public electrical system. From publicly available data.
+    dcat:version: 5.0.2
+    dcat:versionNotes: Version 5.0.2 of the dataset from 2021-07-20 found on https://doi.org/10.5281/zenodo.3884858
+    oe:sensitivityClass: OE-O
+    oe:dataSetStableIdentifier: GB-ESPENI-UoB
+  access:
+    # Access constraint to licensing predicates
+    - rule: oe:verified, oe:last_update max_age_days 60 grants oe:use_any
+      sufficient: true
+      appliesFrom: 2021-04-22
+      appliesTo: 2022-04-22
+    - rule: group:some_group grants oe:use_any, oe:adapt_any
+      sufficient: false
+      appliesFrom: 2021-04-22
+      appliesTo: 2022-04-22
+  transport:
+    http:
+      # This block is mandatory, and contains the OpenAPI spec for the secured or open
+      # HTTP endpoints (depending on data class)
+      openapi: 3.0.0
+      info:
+        title: Sample API
+        description: CSV format data
+        version: 0.1.0
+      servers:
+        - url: https://zenodo.org/record/5055896
+          description: Electrical half hourly raw and cleaned datasets for Great Britain from 2009-11-05
+      paths:
+        "/data":
+          get:
+            summary: Returns a CSV containing all the data
+            description: If we had any more to describe, we'd do it here
+          responses:
+            '200':
+              description: CSV data stream
+  representation:
+    mime: text/csv
+    csvw:
+      # This is only applicable if the mime type is text/csv
+      "@context": http://www.w3.org/ns/csvw
+      tableSchema:
+        columns:
+          - titles: country
+          - titles: country group
+          - titles: name (en)
+          - titles: name (fr)
+          - titles: name (de)
+          - titles: latitude
+          - titles: longitude
